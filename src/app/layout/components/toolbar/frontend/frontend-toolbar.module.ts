@@ -4,13 +4,13 @@ import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from 
 
 import { KdevSharedModule } from '@kdev/shared.module';
 
-import { BackendToolbarComponent } from './backend-toolbar.component';
+import { FrontendToolbarComponent } from './frontend-toolbar.component';
 
 @NgModule({
     declarations: [
-        BackendToolbarComponent
+        FrontendToolbarComponent
     ],
-    imports     : [
+    imports: [
         RouterModule,
         MatButtonModule,
         MatIconModule,
@@ -19,10 +19,9 @@ import { BackendToolbarComponent } from './backend-toolbar.component';
 
         KdevSharedModule,
     ],
-    exports     : [
-        BackendToolbarComponent
+    exports: [
+        FrontendToolbarComponent
     ]
 })
-export class BackendToolbarModule
-{
+export class BackendToolbarModule {
 }
