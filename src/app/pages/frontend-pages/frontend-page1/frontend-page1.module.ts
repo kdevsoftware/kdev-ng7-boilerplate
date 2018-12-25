@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FrontendPage1Component } from './frontend-page1.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [FrontendPage1Component],
   imports: [
     CommonModule
   ]
