@@ -12,7 +12,7 @@ export const kdevConfig: KdevConfig = {
             folded: false,
             hidden: false,
             position: 'left',
-            variant: 'admin'
+            variant: 'style-1'
         },
         toolbar: {
             customBackgroundColor: false,
