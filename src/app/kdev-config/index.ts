@@ -14,8 +14,8 @@ export const kdevConfig: KdevConfig = {
             variant: 'style-2'
         },
         toolbar: {
-            customBackgroundColor: false,
-            background: 'kdev-white-500',
+            customBackgroundColor: true,
+            background: 'kdev-navy-900',
             hidden: false,
             position: 'below-static'
         },

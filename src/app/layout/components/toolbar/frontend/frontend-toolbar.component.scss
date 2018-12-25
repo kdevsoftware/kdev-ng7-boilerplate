@@ -1,54 +1,39 @@
 @import "src/@kdev/scss/kdev";
-
 frontend-toolbar {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  z-index: 4;
+  &.below {
+    z-index: 2;
+  }
+  .mat-toolbar {
     position: relative;
+    background: inherit !important;
+    color: inherit !important;
+    height: 84px;
+  }
+  .logo {
     display: flex;
-    flex: 0 0 auto;
-    z-index: 4;
-
-    &.below {
-        z-index: 2;
+    align-items: center;
+    .logo-icon {
+      height: 36px;
+      filter: drop-shadow(0px 3px 6px rgba(255, 255, 255, 0.6))
     }
-
-    .mat-toolbar {
-        position: relative;
-        background: inherit !important;
-        color: inherit !important;
+  }
+  .login-button {
+    background: #4a8ff6 !important;
+    border-radius: 50px;
+  }
+  .navbar-toggle-button {
+    min-width: 56px;
+    height: 56px;
+  }
+  .toolbar-separator {
+    height: 64px;
+    width: 1px;
+    @include media-breakpoint('xs') {
+      height: 56px;
     }
-
-    .logo {
-        display: flex;
-        align-items: center;
-
-        .logo-icon {
-            width: 38px;
-        }
-    }
-
-    .user-button,
-    kdev-search-bar,
-    .language-button,
-    .chat-panel-toggle-button,
-    .quick-panel-toggle-button {
-        min-width: 64px;
-        height: 64px;
-
-        @include media-breakpoint('xs') {
-            height: 56px;
-        }
-    }
-
-    .navbar-toggle-button {
-        min-width: 56px;
-        height: 56px;
-    }
-
-    .toolbar-separator {
-        height: 64px;
-        width: 1px;
-
-        @include media-breakpoint('xs') {
-            height: 56px;
-        }
-    }
+  }
 }
