@@ -12,3 +12,10 @@ $ npm start
 ```
 
 Navigate to `http://localhost:4200/`.
+
+## Deploying to Github page
+
+```
+$ ng build --prod --base-href "https://kdevsoftware.github.io/kdev-ng7-boilerplate/"
+$ sudo ngh
+```
