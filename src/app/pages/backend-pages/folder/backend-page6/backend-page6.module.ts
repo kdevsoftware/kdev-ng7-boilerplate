@@ -6,8 +6,8 @@ import { BackendPage6Component } from './backend-page6.component';
 
 const routes: Routes = [
   {
-      path     : '**',
-      component: BackendPage6Component
+    path: '**',
+    component: BackendPage6Component
   }
 ];
 
