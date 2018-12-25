@@ -11,17 +11,10 @@ export class ToolbarComponent {
     // Private
     _layout: string;
 
-    /**
-     * Constructor
-     *
-     * @param {ElementRef} _elementRef
-     * @param {Renderer2} _renderer
-     */
     constructor(
         private _elementRef: ElementRef,
         private _renderer: Renderer2
     ) {
-        // Set the private defaults
         this._layout = 'frontend';
     }
 

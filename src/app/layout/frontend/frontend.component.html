@@ -9,7 +9,7 @@
   <div id="container-1" class="container">
     <div id="container-2" class="container">
       <div id="container-3" class="container" kdevPerfectScrollbar [kdevPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
-        
+
         <!-- CONTENT -->
         <content></content>
         <!-- / CONTENT -->
@@ -46,7 +46,8 @@
 
 <!-- TOOLBAR -->
 <ng-template #toolbar>
-  <toolbar *ngIf="!kdevConfig.layout.toolbar.hidden" [ngClass]="kdevConfig.layout.toolbar.customBackgroundColor === true ? kdevConfig.layout.toolbar.position + ' ' + kdevConfig.layout.toolbar.background : kdevConfig.layout.toolbar.position">
+  <toolbar *ngIf="!kdevConfig.layout.toolbar.hidden" [ngClass]="kdevConfig.layout.toolbar.customBackgroundColor === true ? kdevConfig.layout.toolbar.position + ' ' + kdevConfig.layout.toolbar.background : kdevConfig.layout.toolbar.position"
+    [layout]="kdevConfig.layout.style">
   </toolbar>
 </ng-template>
 <!-- / TOOLBAR -->
