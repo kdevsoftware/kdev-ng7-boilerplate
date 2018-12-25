@@ -5,6 +5,10 @@ import { KdevSharedModule } from '@kdev/shared.module';
 
 const routes = [
   {
+    path: '',
+    loadChildren: './home/home.module#HomeModule'
+  },
+  {
     path: 'page-1',
     loadChildren: './frontend-page1/frontend-page1.module#FrontendPage1Module'
   },

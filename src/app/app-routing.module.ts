@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'frontend/page-1'
+    redirectTo: 'frontend'
   }
 ];
 

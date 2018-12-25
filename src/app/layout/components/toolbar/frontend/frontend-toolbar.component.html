@@ -5,9 +5,11 @@
         <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
 
             <div fxLayout="row" fxLayoutAlign="start center">
-                <div class="logo ml-16">
-                    <img class="logo-icon" src="assets/images/logos/kdev.png">
-                </div>
+                <a [routerLink]="'frontend'">
+                    <div class="logo ml-16">
+                        <img class="logo-icon" src="assets/images/logos/kdev.png">
+                    </div>
+                </a>
             </div>
 
         </div>
@@ -15,6 +17,9 @@
         <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
 
             <div fxFlex fxHide fxShow.gt-sm>
+                <button mat-button class="ml-8" [routerLink]="'frontend'">
+                    <span class="secondary-text font-size-16 mx-4">Home</span>
+                </button>
                 <button mat-button class="ml-8" [routerLink]="'frontend/page-1'">
                     <span class="secondary-text font-size-16 mx-4">Page 1</span>
                 </button>
