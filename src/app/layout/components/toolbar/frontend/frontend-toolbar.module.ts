@@ -23,5 +23,5 @@ import { FrontendToolbarComponent } from './frontend-toolbar.component';
         FrontendToolbarComponent
     ]
 })
-export class BackendToolbarModule {
+export class FrontendToolbarModule {
 }
