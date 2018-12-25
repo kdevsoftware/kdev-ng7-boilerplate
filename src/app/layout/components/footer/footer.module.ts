@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { KdevSharedModule } from '@kdev/shared.module';
+import { MatToolbarModule } from '@angular/material';
 
 import { FooterComponent } from 'app/layout/components/footer/footer.component';
 
@@ -10,7 +11,8 @@ import { FooterComponent } from 'app/layout/components/footer/footer.component';
     ],
     imports: [
         RouterModule,
-        KdevSharedModule
+        KdevSharedModule,
+        MatToolbarModule,
     ],
     exports: [
         FooterComponent

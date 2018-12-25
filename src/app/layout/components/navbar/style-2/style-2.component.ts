@@ -9,7 +9,7 @@ import { KdevPerfectScrollbarDirective } from '@kdev/directives/kdev-perfect-scr
 import { KdevSidebarService } from '@kdev/components/sidebar/sidebar.service';
 
 @Component({
-    selector: 'navbar-vertical-style-2',
+    selector: 'navbar-style-2',
     templateUrl: './style-2.component.html',
     styleUrls: ['./style-2.component.scss'],
     encapsulation: ViewEncapsulation.None

@@ -73,6 +73,13 @@ $typography: mat-typography-config(
 // Setup the typography
 @include angular-material-typography($typography);
 
+// -----------------------------------------------------------------------------------------------------
+// @ Component theming
+// -----------------------------------------------------------------------------------------------------
+
+// Import app and page component themes here to enable theming for them
+@import "src/app/layout/components/toolbar/toolbar.theme";
+
 // Define a mixin for easier access
 @mixin components-theme($theme) {
 }
