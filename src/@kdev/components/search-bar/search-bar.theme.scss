@@ -1,0 +1,11 @@
+@mixin kdev-search-bar-theme($theme) {
+
+    $background: map-get($theme, background);
+
+    .kdev-search-bar {
+
+        &.expanded {
+            background-color: map-get($background, background);
+        }
+    }
+}

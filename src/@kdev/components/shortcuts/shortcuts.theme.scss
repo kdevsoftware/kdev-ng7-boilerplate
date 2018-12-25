@@ -1,0 +1,11 @@
+@mixin kdev-shortcuts-theme($theme) {
+
+    $background: map-get($theme, background);
+
+    #kdev-shortcuts {
+
+        &.show-mobile-panel {
+            background-color: map-get($background, background);
+        }
+    }
+}
