@@ -1,0 +1,17 @@
+@mixin kdev-countdown-theme($theme) {
+
+    $foreground: map-get($theme, foreground);
+
+    kdev-countdown {
+
+        .kdev-countdown {
+
+            .time {
+
+                .title {
+                    color: map-get($foreground, secondary-text);
+                }
+            }
+        }
+    }
+}

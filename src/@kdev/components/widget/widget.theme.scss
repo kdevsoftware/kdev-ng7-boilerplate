@@ -1,0 +1,14 @@
+@mixin kdev-widget-theme($theme) {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    kdev-widget {
+
+        > .kdev-widget-front,
+        > .kdev-widget-back {
+            background: map-get($background, card);
+            border-color: map-get($foreground, divider);
+        }
+    }
+}
