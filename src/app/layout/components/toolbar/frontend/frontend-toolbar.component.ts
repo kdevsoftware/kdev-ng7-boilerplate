@@ -11,7 +11,7 @@ import { navigation } from 'app/navigation/navigation';
 
 @Component({
     selector: 'frontend-toolbar',
-    templateUrl: './frontend-frontend-toolbar.component.html',
+    templateUrl: './frontend-toolbar.component.html',
     styleUrls: ['./frontend-toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None
 })

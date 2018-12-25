@@ -11,7 +11,7 @@ import { navigation } from 'app/navigation/navigation';
 
 @Component({
     selector: 'backend-toolbar',
-    templateUrl: './backend-backend-toolbar.component.html',
+    templateUrl: './backend-toolbar.component.html',
     styleUrls: ['./backend-toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None
 })

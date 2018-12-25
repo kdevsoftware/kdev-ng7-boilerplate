@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
-
 import { KdevSharedModule } from '@kdev/shared.module';
+import { FrontendToolbarModule } from './frontend/frontend-toolbar.module';
+import { BackendToolbarModule } from './backend/backend-toolbar.module';
 
 import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.component';
 
@@ -12,12 +12,10 @@ import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.componen
     ],
     imports     : [
         RouterModule,
-        MatButtonModule,
-        MatIconModule,
-        MatMenuModule,
-        MatToolbarModule,
-
         KdevSharedModule,
+
+        FrontendToolbarModule,
+        BackendToolbarModule
     ],
     exports     : [
         ToolbarComponent
