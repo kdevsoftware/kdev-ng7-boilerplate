@@ -19,3 +19,5 @@ Navigate to `http://localhost:4200/`.
 $ ng build --prod --base-href "https://kdevsoftware.github.io/kdev-ng7-boilerplate/"
 $ sudo ngh
 ```
+
+Navigate to `https://kdevsoftware.github.io/kdev-ng7-boilerplate/`
