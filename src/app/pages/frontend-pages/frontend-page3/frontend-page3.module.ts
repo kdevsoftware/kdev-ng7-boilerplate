@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { KdevSharedModule } from '@kdev/shared.module';
+
 import { FrontendPage3Component } from './frontend-page3.component';
+
+const routes: Routes = [
+  {
+    path: '**',
+    component: FrontendPage3Component
+  }
+];
 
 @NgModule({
   declarations: [FrontendPage3Component],
   imports: [
-    CommonModule
+    RouterModule.forChild(routes),
+    KdevSharedModule,
   ]
 })
 export class FrontendPage3Module { }

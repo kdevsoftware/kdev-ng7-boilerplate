@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'frontend',
-    loadChildren: './pages/backend-pages/frontend-pages.module#FrontendPagesModule'
+    loadChildren: './pages/frontend-pages/frontend-pages.module#FrontendPagesModule'
   },
   {
     path: 'backend',
