@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BackendPage4Component } from './backend-page4.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [BackendPage4Component],
   imports: [
     CommonModule
   ]
