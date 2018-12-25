@@ -15,6 +15,8 @@ import { KdevProgressBarModule, KdevSidebarModule, KdevThemeOptionsModule } from
 import { kdevConfig } from 'app/kdev-config';
 import { FakeDbService } from 'app/fake-db/fake-db.service';
 
+import { LayoutModule } from './layout/layout.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -36,6 +38,8 @@ import { FakeDbService } from 'app/fake-db/fake-db.service';
     KdevSharedModule,
     KdevSidebarModule,
     KdevThemeOptionsModule,
+
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { KdevSharedModule } from '@kdev/shared.module';
+import { KdevSidebarModule } from '@kdev/components';
+
 import { BackendComponent } from './backend.component';
 
 @NgModule({
   declarations: [BackendComponent],
   imports: [
-    CommonModule
+    RouterModule,
+    KdevSharedModule,
+    KdevSidebarModule
+  ],
+  exports: [
+    BackendComponent
   ]
 })
 export class BackendModule { }
