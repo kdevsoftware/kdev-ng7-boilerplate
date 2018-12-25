@@ -12,21 +12,21 @@ export const navigation: KdevNavigation[] = [
                 title: 'Page 1',
                 type: 'item',
                 icon: 'receipt',
-                url: '/pages/page-1'
+                url: '/backend/page-1'
             },
             {
                 id: 'page-2',
                 title: 'Page 2',
                 type: 'item',
                 icon: 'receipt',
-                url: '/pages/page-2'
+                url: '/backend/page-2'
             },
             {
                 id: 'page-3',
                 title: 'Page 3',
                 type: 'item',
                 icon: 'receipt',
-                url: '/pages/page-3'
+                url: '/backend/page-3'
             },
             {
                 id: 'folder',
@@ -38,24 +38,39 @@ export const navigation: KdevNavigation[] = [
                         id: 'page-4',
                         title: 'Page 4',
                         type: 'item',
-                        url: '/pages/page-4',
+                        url: '/backend/page-4',
                         exactMatch: true
                     },
                     {
                         id: 'page-5',
                         title: 'Page 5',
                         type: 'item',
-                        url: '/pages/page-5',
+                        url: '/backend/page-5',
                         exactMatch: true
                     },
                     {
                         id: 'page-6',
                         title: 'Page 6',
                         type: 'item',
-                        url: '/pages/page-6',
+                        url: '/backend/page-6',
                         exactMatch: true
                     }
                 ]
+            }
+        ]
+    },
+    {
+        id: 'profile',
+        title: 'Profile',
+        type: 'group',
+        icon: 'profile',
+        children: [
+            {
+                id: 'settings',
+                title: 'Settings',
+                type: 'item',
+                icon: 'settings',
+                url: '/backend/profile'
             }
         ]
     }
