@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kdev - Angular 7 Material Design Boilerplate</title>
+  <base href="https://kdevsoftware.github.io/kdev-ng7-boilerplate">
+  <meta name="description" content="Angular Material design admin template">
+  <meta name="keywords" content="HTML,CSS,Angular,Angular 7,Material,Boilerplate">
+  <meta name="author" content="KDevSoftware">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="assets/icons/meteocons/style.css" rel="stylesheet">
+  <link href="assets/icons/material-icons/outline/style.css" rel="stylesheet">
+
+  <style type="text/css">
+    #kdev-splash-screen {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #2D323D;
+      z-index: 99999;
+      pointer-events: none;
+    }
+
+    #kdev-splash-screen .center {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #kdev-splash-screen .logo {
+      width: 160px;
+      margin: 0 auto 24px;
+    }
+
+    #kdev-splash-screen .logo img {
+      filter: drop-shadow(0px 6px 4px rgba(255, 255, 255, 0.2))
+    }
+
+    #kdev-splash-screen .spinner-wrapper {
+      display: block;
+      position: relative;
+      width: 100%;
+      min-height: 100px;
+      height: 100px;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner {
+      position: absolute;
+      overflow: hidden;
+      left: 50%;
+      margin-left: -50px;
+      animation: outer-rotate 2.91667s linear infinite;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .gap {
+      position: absolute;
+      left: 49px;
+      right: 49px;
+      top: 0;
+      bottom: 0;
+      border-top: 10px solid;
+      box-sizing: border-box;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .left,
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .right {
+      position: absolute;
+      top: 0;
+      height: 100px;
+      width: 50px;
+      overflow: hidden;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .left .half-circle,
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .right .half-circle {
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      box-sizing: border-box;
+      border: 10px solid #4285F4;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .left {
+      left: 0;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .left .half-circle {
+      left: 0;
+      border-right-color: transparent;
+      animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+      -webkit-animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .right {
+      right: 0;
+    }
+
+    #kdev-splash-screen .spinner-wrapper .spinner .inner .right .half-circle {
+      right: 0;
+      border-left-color: transparent;
+      animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+      -webkit-animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+    }
+
+    @keyframes outer-rotate {
+      0% {
+        transform: rotate(0deg) scale(0.5);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(0.5);
+      }
+    }
+
+    @keyframes left-wobble {
+
+      0%,
+      100% {
+        transform: rotate(130deg);
+      }
+
+      50% {
+        transform: rotate(-5deg);
+      }
+    }
+
+    @keyframes right-wobble {
+
+      0%,
+      100% {
+        transform: rotate(-130deg);
+      }
+
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes sporadic-rotate {
+      12.5% {
+        transform: rotate(135deg);
+      }
+
+      25% {
+        transform: rotate(270deg);
+      }
+
+      37.5% {
+        transform: rotate(405deg);
+      }
+
+      50% {
+        transform: rotate(540deg);
+      }
+
+      62.5% {
+        transform: rotate(675deg);
+      }
+
+      75% {
+        transform: rotate(810deg);
+      }
+
+      87.5% {
+        transform: rotate(945deg);
+      }
+
+      100% {
+        transform: rotate(1080deg);
+      }
+    }
+  </style>
+<link rel="stylesheet" href="styles.a8119f393ae94b7e65a4.css"></head>
+
+<body>
+
+  <kdev-splash-screen id="kdev-splash-screen">
+
+    <div class="center">
+
+      <div class="logo">
+        <img width="160" src="assets/images/logos/kdev.png">
+      </div>
+
+      <div class="spinner-wrapper">
+        <div class="spinner">
+          <div class="inner">
+            <div class="gap"></div>
+            <div class="left">
+              <div class="half-circle"></div>
+            </div>
+            <div class="right">
+              <div class="half-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </kdev-splash-screen>
+
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.4ec81e4d9fd42ea1c9f7.js"></script><script type="text/javascript" src="polyfills.de3db41568411a33a7d2.js"></script><script type="text/javascript" src="main.5d99e0262354f8ecba3f.js"></script></body>
+</html>
