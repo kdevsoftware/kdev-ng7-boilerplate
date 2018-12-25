@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { KdevSharedModule } from '@kdev/shared.module';
+
 import { BackendPage6Component } from './backend-page6.component';
+
+const routes: Routes = [
+  {
+      path     : '**',
+      component: BackendPage6Component
+  }
+];
 
 @NgModule({
   declarations: [BackendPage6Component],
   imports: [
-    CommonModule
+    RouterModule.forChild(routes),
+    KdevSharedModule,
   ]
 })
 export class BackendPage6Module { }
