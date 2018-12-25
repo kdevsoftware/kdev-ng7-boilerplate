@@ -4,7 +4,7 @@ export const kdevConfig: KdevConfig = {
     colorTheme: 'theme-default',
     customScrollbars: true,
     layout: {
-        style: 'backend',
+        style: 'frontend',
         width: 'fullwidth',
         navbar: {
             primaryBackground: 'kdev-navy-700',
