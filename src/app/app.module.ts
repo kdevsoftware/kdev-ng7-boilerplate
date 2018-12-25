@@ -11,9 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { KdevModule } from '@kdev/kdev.module';
 import { KdevSharedModule } from '@kdev/shared.module';
-import { KdevProgressBarModule, KdevSidebarModule, KdevThemeOptionsModule } from '@kdev/components';
+import { KdevProgressBarModule, KdevSidebarModule} from '@kdev/components';
 import { kdevConfig } from 'app/kdev-config';
-import { FakeDbService } from 'app/fake-db/fake-db.service';
+import { VirtualDbService } from 'app/virtual-db/virtual-db.service';
 
 import { LayoutModule } from './layout/layout.module';
 
@@ -28,7 +28,7 @@ import { LayoutModule } from './layout/layout.module';
     HttpClientModule,
 
     TranslateModule.forRoot(),
-    InMemoryWebApiModule.forRoot(FakeDbService, {
+    InMemoryWebApiModule.forRoot(VirtualDbService, {
       delay: 0,
       passThruUnknownUrl: true
     }),
@@ -37,7 +37,6 @@ import { LayoutModule } from './layout/layout.module';
     KdevProgressBarModule,
     KdevSharedModule,
     KdevSidebarModule,
-    KdevThemeOptionsModule,
 
     LayoutModule,
   ],

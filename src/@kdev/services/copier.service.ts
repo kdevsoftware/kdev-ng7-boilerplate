@@ -25,7 +25,7 @@ export class KdevCopierService
         this.createTextareaAndSelect(text);
 
         const copySuccessful = document.execCommand('copy');
-        this._removeFake();
+        this._removeVirtual();
 
         return copySuccessful;
     }
@@ -38,7 +38,7 @@ export class KdevCopierService
      */
     private createTextareaAndSelect(text: string): void
     {
-        // Create a fake element to hold the contents to copy
+        // Create a virtual element to hold the contents to copy
         this.textarea = document.createElement('textarea');
 
         // Prevent zooming on iOS
@@ -65,7 +65,7 @@ export class KdevCopierService
      *
      * @private
      */
-    private _removeFake(): void
+    private _removeVirtual(): void
     {
         if ( this.textarea )
         {

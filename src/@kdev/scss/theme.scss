@@ -1,9 +1,7 @@
 @import "src/@kdev/components/countdown/countdown.theme";
 @import "src/@kdev/components/material-color-picker/material-color-picker.theme";
 @import "src/@kdev/components/search-bar/search-bar.theme";
-@import "src/@kdev/components/shortcuts/shortcuts.theme";
 @import "src/@kdev/components/sidebar/sidebar.theme";
-@import "src/@kdev/components/theme-options/theme-options.theme";
 @import "src/@kdev/components/widget/widget.theme";
 
 @mixin kdev-core-theme($theme) {
@@ -18,9 +16,7 @@
     // Theming for Kdev components
     @include kdev-countdown-theme($theme);
     @include kdev-search-bar-theme($theme);
-    @include kdev-shortcuts-theme($theme);
     @include kdev-sidebar-theme($theme);
-    @include kdev-theme-options-theme($theme);
     @include kdev-material-color-picker-theme($theme);
     @include kdev-widget-theme($theme);
 

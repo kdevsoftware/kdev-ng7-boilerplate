@@ -1,0 +1,39 @@
+<div class="navbar-top" [ngClass]="kdevConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo">
+        <img class="logo-icon" src="assets/images/logos/kdev.png">
+    </div>
+
+    <div class="buttons">
+
+        <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" fxHide.lt-md>
+            <mat-icon class="secondary-text">menu</mat-icon>
+        </button>
+
+        <button mat-icon-button class="toggle-sidebar-opened" (click)="toggleSidebarOpened()" fxHide.gt-sm>
+            <mat-icon class="secondary-text">arrow_back</mat-icon>
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="navbar-scroll-container" [ngClass]="kdevConfig.layout.navbar.primaryBackground" kdevPerfectScrollbar
+    [kdevPerfectScrollbarOptions]="{suppressScrollX: true}">
+
+    <div class="user" fxLayout="column" [ngClass]="kdevConfig.layout.navbar.secondaryBackground">
+
+        <div class="h3 username">K Developer</div>
+        <div class="h5 email hint-text mt-8">kdev.software1110@mail.com</div>
+        <div class="avatar-container" [ngClass]="kdevConfig.layout.navbar.primaryBackground">
+            <img class="avatar" src="assets/images/avatars/kdev.png">
+        </div>
+
+    </div>
+
+    <div class="navbar-content">
+        <kdev-navigation class="material2" layout="vertical"></kdev-navigation>
+    </div>
+
+</div>
