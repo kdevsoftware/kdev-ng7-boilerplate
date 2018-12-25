@@ -1,15 +1,14 @@
 <div class="navbar-header" [ngClass]="kdevConfig.layout.navbar.secondaryBackground">
 
     <div class="logo">
-        <img class="logo-icon" src="assets/images/logos/kdev.svg">
-        <span class="logo-text">KDEV</span>
+        <img class="logo-icon" src="assets/images/logos/kdev.png">
     </div>
 
-    <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" fxHide.lt-lg>
+    <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" fxHide.lt-md>
         <mat-icon>menu</mat-icon>
     </button>
 
-    <button mat-icon-button class="toggle-sidebar-opened" (click)="toggleSidebarOpened()" fxHide.gt-md>
+    <button mat-icon-button class="toggle-sidebar-opened" (click)="toggleSidebarOpened()" fxHide.gt-sm>
         <mat-icon>arrow_back</mat-icon>
     </button>
 

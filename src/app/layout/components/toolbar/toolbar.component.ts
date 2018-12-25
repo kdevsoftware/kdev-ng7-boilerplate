@@ -10,154 +10,47 @@ import { KdevSidebarService } from '@kdev/components/sidebar/sidebar.service';
 import { navigation } from 'app/navigation/navigation';
 
 @Component({
-    selector     : 'toolbar',
-    templateUrl  : './toolbar.component.html',
-    styleUrls    : ['./toolbar.component.scss'],
+    selector: 'toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class ToolbarComponent implements OnInit, OnDestroy
-{
-    horizontalNavbar: boolean;
-    rightNavbar: boolean;
+export class ToolbarComponent implements OnInit, OnDestroy {
     hiddenNavbar: boolean;
     languages: any;
     navigation: any;
     selectedLanguage: any;
     userStatusOptions: any[];
 
-    // Private
     private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {KdevConfigService} _kdevConfigService
-     * @param {KdevSidebarService} _kdevSidebarService
-     * @param {TranslateService} _translateService
-     */
     constructor(
         private _kdevConfigService: KdevConfigService,
         private _kdevSidebarService: KdevSidebarService,
         private _translateService: TranslateService
-    )
-    {
-        // Set the defaults
-        this.userStatusOptions = [
-            {
-                'title': 'Online',
-                'icon' : 'icon-checkbox-marked-circle',
-                'color': '#4CAF50'
-            },
-            {
-                'title': 'Away',
-                'icon' : 'icon-clock',
-                'color': '#FFC107'
-            },
-            {
-                'title': 'Do not Disturb',
-                'icon' : 'icon-minus-circle',
-                'color': '#F44336'
-            },
-            {
-                'title': 'Invisible',
-                'icon' : 'icon-checkbox-blank-circle-outline',
-                'color': '#BDBDBD'
-            },
-            {
-                'title': 'Offline',
-                'icon' : 'icon-checkbox-blank-circle-outline',
-                'color': '#616161'
-            }
-        ];
-
-        this.languages = [
-            {
-                id   : 'en',
-                title: 'English',
-                flag : 'us'
-            },
-            {
-                id   : 'tr',
-                title: 'Turkish',
-                flag : 'tr'
-            }
-        ];
-
+    ) {
         this.navigation = navigation;
 
-        // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
-    ngOnInit(): void
-    {
-        // Subscribe to the config changes
+    ngOnInit(): void {
         this._kdevConfigService.config
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((settings) => {
-                this.horizontalNavbar = settings.layout.navbar.position === 'top';
-                this.rightNavbar = settings.layout.navbar.position === 'right';
                 this.hiddenNavbar = settings.layout.navbar.hidden === true;
             });
 
-        // Set the selected language from default languages
-        this.selectedLanguage = _.find(this.languages, {'id': this._translateService.currentLang});
+        this.selectedLanguage = _.find(this.languages, { 'id': this._translateService.currentLang });
     }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void
-    {
-        // Unsubscribe from all subscriptions
+    ngOnDestroy(): void {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Toggle sidebar open
-     *
-     * @param key
-     */
-    toggleSidebarOpen(key): void
-    {
+    toggleSidebarOpen(key): void {
         this._kdevSidebarService.getSidebar(key).toggleOpen();
-    }
-
-    /**
-     * Search
-     *
-     * @param value
-     */
-    search(value): void
-    {
-        // Do your search here...
-        console.log(value);
-    }
-
-    /**
-     * Set the language
-     *
-     * @param lang
-     */
-    setLanguage(lang): void
-    {
-        // Set the selected language for the toolbar
-        this.selectedLanguage = lang;
-
-        // Use the selected language for translations
-        this._translateService.use(lang.id);
     }
 }

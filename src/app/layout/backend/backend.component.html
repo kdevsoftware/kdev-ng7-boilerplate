@@ -8,11 +8,11 @@
 
     <div id="container-1" class="container">
 
-        <!-- NAVBAR: Left -->
-        <ng-container *ngIf="kdevConfig.layout.navbar.position === 'left'">
+        <!-- NAVBAR -->
+        <ng-container>
             <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
         </ng-container>
-        <!-- / NAVBAR: Left -->
+        <!-- / NAVBAR -->
 
         <div id="container-2" class="container">
 
@@ -22,8 +22,7 @@
             </ng-container>
             <!-- / TOOLBAR: Below fixed -->
 
-            <div id="container-3" class="container" kdevPerfectScrollbar
-                 [kdevPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+            <div id="container-3" class="container" kdevPerfectScrollbar [kdevPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
 
                 <!-- TOOLBAR: Below static -->
                 <ng-container *ngIf="kdevConfig.layout.toolbar.position === 'below-static'">
@@ -51,12 +50,6 @@
 
         </div>
 
-        <!-- NAVBAR: Right -->
-        <ng-container *ngIf="kdevConfig.layout.navbar.position === 'right'">
-            <ng-container *ngTemplateOutlet="rightNavbar"></ng-container>
-        </ng-container>
-        <!-- / NAVBAR: Right -->
-
     </div>
 
     <!-- FOOTER: Above -->
@@ -73,38 +66,23 @@
 
 <!-- TOOLBAR -->
 <ng-template #toolbar>
-    <toolbar *ngIf="!kdevConfig.layout.toolbar.hidden"
-             [ngClass]="kdevConfig.layout.toolbar.customBackgroundColor === true ? kdevConfig.layout.toolbar.position + ' ' + kdevConfig.layout.toolbar.background : kdevConfig.layout.toolbar.position">
+    <toolbar *ngIf="!kdevConfig.layout.toolbar.hidden" [ngClass]="kdevConfig.layout.toolbar.customBackgroundColor === true ? kdevConfig.layout.toolbar.position + ' ' + kdevConfig.layout.toolbar.background : kdevConfig.layout.toolbar.position">
     </toolbar>
 </ng-template>
 <!-- / TOOLBAR -->
 
 <!-- FOOTER -->
 <ng-template #footer>
-    <footer *ngIf="!kdevConfig.layout.footer.hidden"
-            [ngClass]="kdevConfig.layout.footer.customBackgroundColor === true ? kdevConfig.layout.footer.position + ' ' + kdevConfig.layout.footer.background : kdevConfig.layout.footer.position">
+    <footer *ngIf="!kdevConfig.layout.footer.hidden" [ngClass]="kdevConfig.layout.footer.customBackgroundColor === true ? kdevConfig.layout.footer.position + ' ' + kdevConfig.layout.footer.background : kdevConfig.layout.footer.position">
     </footer>
 </ng-template>
 <!-- / FOOTER -->
 
-<!-- LEFT NAVBAR -->
+<!-- NAVBAR -->
 <ng-template #leftNavbar>
-    <kdev-sidebar name="navbar" class="navbar-kdev-sidebar"
-                  [folded]="kdevConfig.layout.navbar.folded"
-                  lockedOpen="gt-md"
-                  *ngIf="!kdevConfig.layout.navbar.hidden">
+    <kdev-sidebar name="navbar" class="navbar-kdev-sidebar" [folded]="kdevConfig.layout.navbar.folded" lockedOpen="gt-sm"
+        *ngIf="!kdevConfig.layout.navbar.hidden">
         <navbar [variant]="kdevConfig.layout.navbar.variant" class="left-navbar"></navbar>
     </kdev-sidebar>
 </ng-template>
-<!-- / LEFT NAVBAR -->
-
-<!-- RIGHT NAVBAR -->
-<ng-template #rightNavbar>
-    <kdev-sidebar name="navbar" position="right" class="navbar-kdev-sidebar"
-                  [folded]="kdevConfig.layout.navbar.folded"
-                  lockedOpen="gt-md"
-                  *ngIf="!kdevConfig.layout.navbar.hidden">
-        <navbar [variant]="kdevConfig.layout.navbar.variant" class="right-navbar"></navbar>
-    </kdev-sidebar>
-</ng-template>
-<!-- / RIGHT NAVBAR -->
+<!-- / NAVBAR -->

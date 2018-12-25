@@ -11,8 +11,7 @@ export const kdevConfig: KdevConfig = {
             secondaryBackground: 'kdev-navy-900',
             folded: false,
             hidden: false,
-            position: 'left',
-            variant: 'style-1'
+            variant: 'style-2'
         },
         toolbar: {
             customBackgroundColor: false,
@@ -25,10 +24,6 @@ export const kdevConfig: KdevConfig = {
             background: 'kdev-navy-900',
             hidden: false,
             position: 'below-fixed'
-        },
-        sidepanel: {
-            hidden: false,
-            position: 'right'
         }
     }
 };
