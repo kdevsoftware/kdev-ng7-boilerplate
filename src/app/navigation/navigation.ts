@@ -58,5 +58,20 @@ export const navigation: KdevNavigation[] = [
                 ]
             }
         ]
+    },
+    {
+        id: 'profile',
+        title: 'Profile',
+        type: 'group',
+        icon: 'profile',
+        children: [
+            {
+                id: 'settings',
+                title: 'Settings',
+                type: 'item',
+                icon: 'settings',
+                url: '/backend/profile'
+            }
+        ]
     }
 ];

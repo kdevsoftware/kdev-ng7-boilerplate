@@ -27,6 +27,10 @@ const routes = [
   {
     path: 'page-6',
     loadChildren: './folder/backend-page6/backend-page6.module#BackendPage6Module'
+  },
+  {
+    path: 'profile',
+    loadChildren: './profile/profile.module#ProfileModule'
   }
 ];
 
