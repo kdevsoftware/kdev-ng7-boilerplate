@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+
 import { KdevSharedModule } from '@kdev/shared.module';
 
 import { LoginComponent } from './login.component';
 
-const routes: Routes = [
+const routes = [
   {
     path: '**',
     component: LoginComponent
@@ -12,10 +14,20 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [
+    LoginComponent
+  ],
   imports: [
     RouterModule.forChild(routes),
-    KdevSharedModule,
+
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+
+    KdevSharedModule
   ]
 })
-export class LoginModule { }
+export class LoginModule {
+}

@@ -1,3 +1,62 @@
-<p>
-  login works!
-</p>
+<div id="login" fxLayout="column">
+
+  <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+    <div id="login-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+      <div class="back" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+          <a class="back-link" [routerLink]="'/frontend/home'">
+            <span fxLayout fxLayoutAlign="center center"><mat-icon color="accent">keyboard_arrow_left</mat-icon>Back to Home</span>
+          </a>
+      </div>
+
+      <div class="logo">
+        <img src="assets/images/logos/kdev.png">
+      </div>
+
+      <div class="title">Login to your account</div>
+
+      <form name="loginForm" [formGroup]="loginForm" novalidate>
+
+        <mat-form-field class="mb-16">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+          <mat-error *ngIf="loginForm.get('email').hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="!loginForm.get('email').hasError('required') &&
+                                loginForm.get('email').hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+          <mat-error>
+            Password is required
+          </mat-error>
+        </mat-form-field>
+
+        <div class="remember-forgot-password mt-28" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+          <mat-checkbox class="remember-me" aria-label="Remember Me">
+            Remember Me
+          </mat-checkbox>
+
+          <a class="forgot-password" [routerLink]="'/frontend/home'">
+            Forgot Password?
+          </a>
+        </div>
+
+        <button mat-raised-button color="accent" class="submit-button mt-28" aria-label="LOG IN" [disabled]="loginForm.invalid" [routerLink]="'backend/page-1'">
+          LOGIN
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
