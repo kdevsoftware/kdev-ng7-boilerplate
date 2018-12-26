@@ -19,6 +19,7 @@ export class BackendPage4Component implements OnInit {
           hidden: false,
         },
         toolbar: {
+          customBackgroundColor: false,
           hidden: false,
         },
         footer: {

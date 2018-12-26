@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
           hidden: false,
         },
         toolbar: {
+          customBackgroundColor: false,
           hidden: false,
         },
         footer: {
