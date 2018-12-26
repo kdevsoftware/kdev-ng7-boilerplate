@@ -1,5 +1,6 @@
 export * from './confirm-dialog/confirm-dialog.module';
 export * from './countdown/countdown.module';
+export * from './highlight/highlight.module';
 export * from './material-color-picker/material-color-picker.module';
 export * from './navigation/navigation.module';
 export * from './progress-bar/progress-bar.module';
