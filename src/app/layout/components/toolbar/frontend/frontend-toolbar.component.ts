@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,6 +18,7 @@ import { navigation } from 'app/navigation/navigation';
 })
 
 export class FrontendToolbarComponent implements OnInit, OnDestroy {
+    mobileMenu: Boolean = false;
     hiddenNavbar: boolean;
     languages: any;
     navigation: any;
@@ -28,7 +30,8 @@ export class FrontendToolbarComponent implements OnInit, OnDestroy {
     constructor(
         private _kdevConfigService: KdevConfigService,
         private _kdevSidebarService: KdevSidebarService,
-        private _translateService: TranslateService
+        private _translateService: TranslateService,
+        private _router: Router
     ) {
         this.navigation = navigation;
 
@@ -50,7 +53,16 @@ export class FrontendToolbarComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.complete();
     }
 
-    toggleSidebarOpen(key): void {
-        this._kdevSidebarService.getSidebar(key).toggleOpen();
+    showMenu() {
+        this.mobileMenu = true;
+    }
+
+    hideMenu() {
+        this.mobileMenu = false;
+    }
+
+    navigateTo(route) {
+        this._router.navigate(['frontend', route]);
+        this.hideMenu();
     }
 }

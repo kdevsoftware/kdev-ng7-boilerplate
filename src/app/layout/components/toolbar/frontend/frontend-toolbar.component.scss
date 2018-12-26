@@ -17,6 +17,7 @@ frontend-toolbar {
     }
     @include media-breakpoint('xs') {
       height: 56px;
+      padding: 0 20px!important;
     }
   }
   .logo {
@@ -39,7 +40,11 @@ frontend-toolbar {
   .navbar-toggle-button {
     min-width: 44px;
     height: 44px;
-    margin-right: -16px;
+    margin-right: -12px;
+
+    @include media-breakpoint('xs') {
+      margin-right: -8px;
+    }
   }
   .toolbar-separator {
     height: 64px;
@@ -48,4 +53,64 @@ frontend-toolbar {
       height: 56px;
     }
   }
+}
+
+#mobile-menu {
+  height: 100vh;
+  min-height: 400px;
+  width: 0;
+  box-sizing: border-box;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo-section {
+      .logo {
+        .logo-icon {
+          height: 24px;
+        }
+      }
+    }
+  }
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .menu-item {
+      cursor: pointer;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .menu-bottom {
+    display: flex;
+    justify-content: center;
+    .menu-bottom-text {
+      display: flex;
+      align-items: center;
+      .copyright {
+        font-size: 20px;
+        line-height: 32px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  width: 100% !important;
+  padding: 8px 16px !important;
 }

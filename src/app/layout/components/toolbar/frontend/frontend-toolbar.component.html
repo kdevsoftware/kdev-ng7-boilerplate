@@ -37,7 +37,7 @@
                 </button>
             </div>
 
-            <button mat-icon-button class="navbar-toggle-button" fxHide.gt-sm>
+            <button mat-icon-button class="navbar-toggle-button" fxHide.gt-sm (click)="showMenu()">
                 <mat-icon class="secondary-text">menu</mat-icon>
             </button>
 
@@ -46,3 +46,30 @@
     </div>
 
 </mat-toolbar>
+
+<div id="mobile-menu" [class.mobile-menu]="mobileMenu">
+    <div class="menu-top">
+        <div class="logo-section">
+            <div class="logo">
+                <img class="logo-icon" src="assets/images/logos/kdev.png">
+            </div>
+        </div>
+        <div class="hide-mobile-menu">
+            <button mat-icon-button color="accent" (click)="hideMenu()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="menu-items">
+        <a class="font-size-20 mb-28 menu-item" (click)="navigateTo('home')">Home</a>
+        <a class="font-size-20 mb-28 menu-item" (click)="navigateTo('page-1')">Page 1</a>
+        <a class="font-size-20 mb-28 menu-item" (click)="navigateTo('page-2')">Page 2</a>
+        <a class="font-size-20 mb-28 menu-item" (click)="navigateTo('page-3')">Page 3</a>
+        <a class="font-size-20 mb-28 menu-item" (click)="navigateTo('login')">Login / Signup</a>
+    </div>
+
+    <div class="menu-bottom mb-32">
+        <h5 class="font-size-16 menu-bottom-text"><span class="copyright">&copy;</span> 2018 kDev-Software</h5>
+    </div>
+</div>
