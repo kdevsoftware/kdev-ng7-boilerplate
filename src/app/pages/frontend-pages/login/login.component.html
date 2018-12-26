@@ -19,7 +19,7 @@
 
         <mat-form-field class="mb-16">
           <mat-label>Email</mat-label>
-          <input matInput formControlName="email">
+          <input matInput formControlName="email" value="test@kdevsoftware.com">
           <mat-icon matSuffix class="secondary-text">mail</mat-icon>
           <mat-error *ngIf="loginForm.get('email').hasError('required')">
             Email is required
@@ -32,7 +32,7 @@
 
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password">
+          <input matInput type="password" formControlName="password" value="123456">
           <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
           <mat-error>
             Password is required
@@ -49,7 +49,7 @@
           </a>
         </div>
 
-        <button mat-raised-button color="accent" class="submit-button mt-28" aria-label="LOG IN" [disabled]="loginForm.invalid" [routerLink]="'backend/page-1'">
+        <button mat-raised-button color="accent" class="submit-button mt-28" aria-label="LOG IN" [disabled]="loginForm.invalid" [routerLink]="'/backend/page-1'">
           LOGIN
         </button>
 
