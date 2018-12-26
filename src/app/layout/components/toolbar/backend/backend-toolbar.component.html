@@ -1,0 +1,43 @@
+<mat-toolbar class="p-0 mat-elevation-z1">
+
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+
+        <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <button mat-icon-button class="navbar-toggle-button"
+                    *ngIf="!hiddenNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-sm>
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
+        </div>
+
+        <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <button mat-button [matMenuTriggerFor]="userMenu"
+                    class="user-button">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <img class="avatar mr-8 mr-sm-16" src="assets/images/avatars/kdev.png">
+                    <span class="username mr-12" fxHide fxShow.gt-sm>K Developer</span>
+                    <mat-icon class="s-16">keyboard_arrow_down</mat-icon>
+                </div>
+            </button>
+
+            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+                <button mat-menu-item [routerLink]="'/backend/profile'">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>My Profile</span>
+                </button>
+                
+                <button mat-menu-item [routerLink]="'/frontend'">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+
+            </mat-menu>
+
+        </div>
+
+    </div>
+
+</mat-toolbar>

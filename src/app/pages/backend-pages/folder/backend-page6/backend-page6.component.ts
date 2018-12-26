@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KdevConfigService } from '@kdev/services/config.service';
 
 @Component({
   selector: 'app-backend-page6',
@@ -7,7 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackendPage6Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _kdevConfigService: KdevConfigService,
+  ) {
+    // Configure the layout
+    this._kdevConfigService.config = {
+      layout: {
+        style: 'backend',
+        navbar: {
+          hidden: false,
+        },
+        toolbar: {
+          hidden: false,
+        },
+        footer: {
+          hidden: false,
+        }
+      }
+    };
+  }
 
   ngOnInit() {
   }

@@ -10,17 +10,10 @@ export class NavbarComponent {
     // Private
     _variant: string;
 
-    /**
-     * Constructor
-     *
-     * @param {ElementRef} _elementRef
-     * @param {Renderer2} _renderer
-     */
     constructor(
         private _elementRef: ElementRef,
         private _renderer: Renderer2
     ) {
-        // Set the private defaults
         this._variant = 'style-1';
     }
 
@@ -28,9 +21,6 @@ export class NavbarComponent {
     // @ Accessors
     // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Variant
-     */
     get variant(): string {
         return this._variant;
     }

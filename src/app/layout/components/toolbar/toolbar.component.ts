@@ -1,13 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
-import * as _ from 'lodash';
-
-import { KdevConfigService } from '@kdev/services/config.service';
-import { KdevSidebarService } from '@kdev/components/sidebar/sidebar.service';
-
-import { navigation } from 'app/navigation/navigation';
+import { Component, ElementRef, Input, Renderer2, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'toolbar',
@@ -16,41 +7,34 @@ import { navigation } from 'app/navigation/navigation';
     encapsulation: ViewEncapsulation.None
 })
 
-export class ToolbarComponent implements OnInit, OnDestroy {
-    hiddenNavbar: boolean;
-    languages: any;
-    navigation: any;
-    selectedLanguage: any;
-    userStatusOptions: any[];
-
-    private _unsubscribeAll: Subject<any>;
+export class ToolbarComponent {
+    // Private
+    _layout: string;
 
     constructor(
-        private _kdevConfigService: KdevConfigService,
-        private _kdevSidebarService: KdevSidebarService,
-        private _translateService: TranslateService
+        private _elementRef: ElementRef,
+        private _renderer: Renderer2
     ) {
-        this.navigation = navigation;
-
-        this._unsubscribeAll = new Subject();
+        this._layout = 'frontend';
     }
 
-    ngOnInit(): void {
-        this._kdevConfigService.config
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((settings) => {
-                this.hiddenNavbar = settings.layout.navbar.hidden === true;
-            });
+    // -----------------------------------------------------------------------------------------------------
+    // @ Accessors
+    // -----------------------------------------------------------------------------------------------------
 
-        this.selectedLanguage = _.find(this.languages, { 'id': this._translateService.currentLang });
+    get layout(): string {
+        return this._layout;
     }
 
-    ngOnDestroy(): void {
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+    @Input()
+    set layout(value: string) {
+        // Remove the old class name
+        this._renderer.removeClass(this._elementRef.nativeElement, this.layout);
 
-    toggleSidebarOpen(key): void {
-        this._kdevSidebarService.getSidebar(key).toggleOpen();
+        // Store the layout value
+        this._layout = value;
+
+        // Add the new class name
+        this._renderer.addClass(this._elementRef.nativeElement, value);
     }
 }

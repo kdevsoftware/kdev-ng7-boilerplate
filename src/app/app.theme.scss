@@ -79,6 +79,7 @@ $typography: mat-typography-config(
 
 // Import app and page component themes here to enable theming for them
 @import "src/app/layout/components/toolbar/toolbar.theme";
+@import "src/app/pages/frontend-pages/login/login.theme";
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {
@@ -222,4 +223,12 @@ body.theme-pink-dark {
     );
 
     @include kdev-color-classes($palettes);
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset;
 }

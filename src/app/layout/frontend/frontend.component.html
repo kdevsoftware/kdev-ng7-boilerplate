@@ -1,3 +1,60 @@
-<p>
-  frontend works!
-</p>
+<div id="main">
+
+  <!-- TOOLBAR -->
+  <ng-container>
+    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+  </ng-container>
+  <!-- / TOOLBAR -->
+
+  <div id="container-1" class="container">
+    <div id="container-2" class="container">
+      <div id="container-3" class="container" kdevPerfectScrollbar [kdevPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+
+        <!-- CONTENT -->
+        <content></content>
+        <!-- / CONTENT -->
+
+        <!-- FOOTER: Below static -->
+        <ng-container *ngIf="kdevConfig.layout.footer.position === 'below-static'">
+          <ng-container *ngTemplateOutlet="footer"></ng-container>
+        </ng-container>
+        <!-- / FOOTER: Below static -->
+
+      </div>
+
+      <!-- FOOTER: Below fixed -->
+      <ng-container *ngIf="kdevConfig.layout.footer.position === 'below-fixed'">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+      </ng-container>
+      <!-- / FOOTER: Below fixed -->
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER: Above -->
+  <ng-container *ngIf="kdevConfig.layout.footer.position === 'above'">
+    <ng-container *ngTemplateOutlet="footer"></ng-container>
+  </ng-container>
+  <!-- FOOTER: Above -->
+
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- @ PARTIALS -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<!-- TOOLBAR -->
+<ng-template #toolbar>
+  <toolbar *ngIf="!kdevConfig.layout.toolbar.hidden" [ngClass]="kdevConfig.layout.toolbar.customBackgroundColor === true ? kdevConfig.layout.toolbar.position + ' ' + kdevConfig.layout.toolbar.background : kdevConfig.layout.toolbar.position"
+    [layout]="kdevConfig.layout.style">
+  </toolbar>
+</ng-template>
+<!-- / TOOLBAR -->
+
+<!-- FOOTER -->
+<ng-template #footer>
+  <footer *ngIf="!kdevConfig.layout.footer.hidden" [ngClass]="kdevConfig.layout.footer.customBackgroundColor === true ? kdevConfig.layout.footer.position + ' ' + kdevConfig.layout.footer.background : kdevConfig.layout.footer.position">
+  </footer>
+</ng-template>
+<!-- / FOOTER -->
